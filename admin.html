@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/">Daily Verse</a>
+    <nav>
+      <a href="/versus.html">Verse Versus</a>
+      <a href="/trivia.html">Trivia</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/account.html" id="accountLink">Account</a>
+      <a href="/admin.html" aria-current="page">Admin</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode">Dark</button>
+    </nav>
+  </header>
+  <main class="page-shell admin-shell">
+    <section class="reflection-panel" id="adminLoginPanel">
+      <div class="section-heading">
+        <p class="eyebrow">Admin</p>
+        <h1>Sign in</h1>
+      </div>
+      <form id="adminLogin" class="form-grid">
+        <label class="wide">Password <input name="password" type="password" required></label>
+        <button class="button primary" type="submit">Enter admin</button>
+      </form>
+      <p class="notice" id="adminLoginNotice"></p>
+    </section>
+
+    <section id="adminPanel" hidden>
+      <div class="admin-grid">
+        <section class="reflection-panel">
+          <div class="section-heading"><h2>System</h2></div>
+          <div id="adminStats" class="stat-grid"></div>
+        </section>
+        <section class="reflection-panel">
+          <div class="section-heading"><h2>Moderation queue</h2></div>
+          <div id="adminReflections" class="feed-list"></div>
+        </section>
+        <section class="reflection-panel">
+          <div class="section-heading"><h2>Daily verse</h2></div>
+          <form id="dailyVerseForm" class="form-grid">
+            <label class="wide">Verse <select name="verse_id" id="dailyVerseSelect"></select></label>
+            <button class="button primary" type="submit">Set for today</button>
+          </form>
+        </section>
+        <section class="reflection-panel">
+          <div class="section-heading"><h2>Verses</h2></div>
+          <form id="verseForm" class="form-grid">
+            <input name="id" type="hidden">
+            <label>Reference <input name="reference" required placeholder="John 3:16"></label>
+            <label>Book <input name="book" required placeholder="John"></label>
+            <label>Chapter <input name="chapter" type="number" required min="1"></label>
+            <label>Verse start <input name="verse_start" type="number" required min="1"></label>
+            <label>Verse end <input name="verse_end" type="number" min="1"></label>
+            <label class="wide">KJV text <textarea name="text" required></textarea></label>
+            <button class="button primary" type="submit">Save verse</button>
+            <button class="button ghost" id="clearVerseForm" type="button">Clear</button>
+          </form>
+          <div id="adminVerses" class="feed-list compact"></div>
+        </section>
+        <section class="reflection-panel">
+          <div class="section-heading"><h2>Verse Versus stats</h2></div>
+          <div id="versusStats" class="feed-list compact"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

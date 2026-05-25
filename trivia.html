@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KJV Trivia</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/">Daily Verse</a>
+    <nav>
+      <a href="/versus.html">Verse Versus</a>
+      <a href="/trivia.html" aria-current="page">Trivia</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/account.html" id="accountLink">Account</a>
+      <a href="/admin.html">Admin</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode">Dark</button>
+    </nav>
+  </header>
+  <main class="page-shell narrow">
+    <section class="section-heading centered">
+      <p class="eyebrow">KJV trivia</p>
+      <h1>Practice recall with a quiet mind.</h1>
+    </section>
+    <div class="segmented" role="tablist" aria-label="Trivia mode">
+      <button id="blankMode" class="active" type="button">Fill in the Blank</button>
+      <button id="referenceMode" type="button">Name the Verse</button>
+    </div>
+    <section class="trivia-card">
+      <div class="score-line" id="scoreLine">Score: 0 / 0</div>
+      <p class="trivia-question" id="triviaQuestion"></p>
+      <form id="triviaForm" class="form-grid"></form>
+      <p class="notice" id="triviaNotice" role="status"></p>
+      <button class="button" id="nextQuestion" type="button">Next question</button>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

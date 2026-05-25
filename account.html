@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/">Daily Verse</a>
+    <nav>
+      <a href="/versus.html">Verse Versus</a>
+      <a href="/trivia.html">Trivia</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/account.html" id="accountLink" aria-current="page">Account</a>
+      <a href="/admin.html">Admin</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode">Dark</button>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="section-heading centered">
+      <p class="eyebrow">Account</p>
+      <h1>Keep your reflections connected to a profile.</h1>
+    </section>
+
+    <section class="auth-grid" id="signedOutPanel">
+      <div class="reflection-panel">
+        <div class="section-heading"><h2>Sign in</h2></div>
+        <form id="loginForm" class="form-grid">
+          <label class="wide">Email or username <input name="login" autocomplete="username" required></label>
+          <label class="wide">Password <input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="button primary" type="submit">Sign in</button>
+        </form>
+        <p class="notice" id="loginNotice"></p>
+      </div>
+
+      <div class="reflection-panel">
+        <div class="section-heading"><h2>Create account</h2></div>
+        <form id="registerForm" class="form-grid">
+          <label>Email <input name="email" type="email" autocomplete="email" required></label>
+          <label>Username <input name="username" autocomplete="username" minlength="3" maxlength="24" required></label>
+          <label>Display name <input name="display_name" maxlength="80"></label>
+          <label>Password <input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+          <button class="button primary" type="submit">Create account</button>
+        </form>
+        <p class="notice" id="registerNotice"></p>
+      </div>
+    </section>
+
+    <section class="reflection-panel" id="profilePanel" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">Profile</p>
+        <h2 id="profileName">Your profile</h2>
+        <p id="profileLinkLine"></p>
+      </div>
+      <form id="profileForm" class="form-grid">
+        <label>Display name <input name="display_name" maxlength="80"></label>
+        <label>Avatar URL <input name="avatar_url" type="url"></label>
+        <label class="wide">Bio <textarea name="bio" maxlength="500"></textarea></label>
+        <button class="button primary" type="submit">Save profile</button>
+        <button class="button ghost" id="logoutButton" type="button">Sign out</button>
+      </form>
+      <p class="notice" id="profileNotice"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

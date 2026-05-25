@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily KJV Verse</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="/">Daily Verse</a>
+    <nav>
+      <a href="/versus.html">Verse Versus</a>
+      <a href="/trivia.html">Trivia</a>
+      <a href="/shop.html">Shop</a>
+      <a href="/account.html" id="accountLink">Account</a>
+      <a href="/admin.html">Admin</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle dark mode">Dark</button>
+    </nav>
+  </header>
+
+  <main class="home-shell">
+    <section class="verse-hero" aria-live="polite">
+      <p class="eyebrow">KJV verse for today</p>
+      <blockquote id="dailyVerseText">Loading today's verse...</blockquote>
+      <p class="reference" id="dailyVerseReference"></p>
+      <div class="action-row">
+        <button class="button" id="shareButton" type="button">Share</button>
+        <button class="button ghost" id="copyButton" type="button">Copy link</button>
+      </div>
+    </section>
+
+    <section class="reflection-panel" aria-labelledby="reflectionTitle">
+      <div class="section-heading">
+        <h1 id="reflectionTitle">Share what this verse means to you.</h1>
+        <p>Your reflection can be public with a display name or shared as Anonymous.</p>
+      </div>
+      <p class="meta" id="composerAccount"></p>
+      <form id="reflectionForm" class="form-grid">
+        <label>
+          Display name
+          <input id="displayName" name="display_name" maxlength="80" placeholder="Optional">
+        </label>
+        <label>
+          Visibility
+          <select id="postVisibility" name="visibility">
+            <option value="public">Public</option>
+            <option value="unlisted">Unlisted</option>
+            <option value="private">Private</option>
+          </select>
+        </label>
+        <label class="check-row">
+          <input id="anonymous" name="anonymous" type="checkbox">
+          Post publicly as Anonymous
+        </label>
+        <label class="wide">
+          Reflection, prayer, story, or interpretation
+          <textarea id="reflectionText" name="text" minlength="8" maxlength="3000" required></textarea>
+        </label>
+        <button class="button primary" type="submit">Submit reflection</button>
+      </form>
+      <p class="notice" id="reflectionNotice" role="status"></p>
+    </section>
+
+    <section class="feed-section" aria-labelledby="feedTitle">
+      <div class="section-heading">
+        <h2 id="feedTitle">Reflections on today's verse</h2>
+        <p>Approved reflections appear here, newest first.</p>
+      </div>
+      <div id="reflectionFeed" class="feed-list"></div>
+      <div class="center-actions">
+        <button class="button ghost" id="loadMoreReflections" type="button" hidden>Load more</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
