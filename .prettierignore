@@ -1,0 +1,11 @@
+node_modules
+.next
+.data
+data/*.json
+data/source
+package-lock.json
+codex-bible-reflection-site-prompt.md
+artifacts
+test-results
+playwright-report
+next-env.d.ts
